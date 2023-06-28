@@ -11,7 +11,7 @@ btns.forEach(btn =>{
         if(btn.classList.contains('active')){
             btn.classList.remove('active')
     
-            console.log('ya esta seleccionado..')
+            alerts(message, type)
            return
         }
     
@@ -22,3 +22,25 @@ btns.forEach(btn =>{
 })
 
 
+function alerts(message, type){
+
+
+const container= document.querySelector('#message')
+const alert_message= document.createElement('p')
+
+
+if(type==='error'){
+
+    alert_message.classList.add('error')
+    alert_message.innerText= message
+    container.appendChild(alert_message)
+
+}else{
+    alert_message.classList.add('good')
+    alert_message.innerText= message
+    container.appendChild(alert_message)
+}
+
+
+
+}
