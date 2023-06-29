@@ -1,5 +1,6 @@
-const form = document.querySelector('#form ')
+const form = document.querySelector('#form')
 const btns = document.querySelectorAll('#form .btn-rounded')
+
 
 form.addEventListener('submit', sending)
 
@@ -15,7 +16,7 @@ btns.forEach((btnt, i) =>{
         
         btns.forEach((btnt, index)=>{
 
-            console.log(i, index)
+        
             i >= index ? btnt.classList.add('active') :
             btnt.classList.remove('active')
         })
@@ -27,9 +28,19 @@ btns.forEach((btnt, i) =>{
 
 function sending(e){
 e.preventDefault()
-btn.alerts('Your feedback has been sent it ', 'good')
 
-console.log('seleccion..')
+
+
+if(btns.length > 0){
+ 
+    btn.alerts('Your feedback has been sent it ', 'good')
+    
+    return
+}
+
+btn.alerts('Please select from one to five ', 'error')
+
+
 
 }
 
@@ -57,7 +68,7 @@ BNTS.prototype.alerts = function(message, type){
     }
     setTimeout(() => {
         alert_message.remove()
-    
+        
     }, 3000);
     
     
